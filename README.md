@@ -1,13 +1,13 @@
 <div align="center">
 <!-- HEADER -->
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:25bfff,100:9600ff&height=200&section=header&text=Meri%C3%A7%20Karpat&fontSize=48&fontColor=ffffff&animation=twinkling" />
-</div> 
+</div>
 
 <!-- INTRO -->
-<p align="center"> 
-  <a href="https://github.com/merickarpat"> 
-    <img src="https://readme-typing-svg.herokuapp.com?size=24&duration=4000&pause=800&color=3B82F6&center=true&vCenter=true&width=650&lines=Full+Stack+TypeScript+Engineer;SaaS+Founder;AI-powered+Platforms;Heyfield+%7C+AI+Voice+Receptionist;RevTune+%7C+AI+Pricing+Engine+for+SaaS" /> 
-  </a> 
+<p align="center">
+  <a href="https://github.com/merickarpat">
+    <img src="https://readme-typing-svg.herokuapp.com?size=24&duration=4000&pause=800&color=3B82F6&center=true&vCenter=true&width=650&lines=Full+Stack+TypeScript+Engineer;SaaS+Founder;AI-powered+Platforms;Heyfield+%7C+AI+Voice+Receptionist;RevTune+%7C+AI+Pricing+Engine+for+SaaS" />
+  </a>
 </p>
 
 ---
@@ -15,15 +15,22 @@
 ## 🚀 What I'm Shipping
 
 ### 📞 Heyfield — AI Voice Receptionist for Home Service Businesses
+
 <p>
   <img src="https://img.shields.io/badge/Heyfield-AI%20Voice%20Receptionist-0F172A?style=for-the-badge&logo=phone&logoColor=22c55e" />
   <img src="https://img.shields.io/badge/Status-In%20Production-16a34a?style=for-the-badge" />
 </p>
 
-<table>
-<tr>
-<td width="50%" valign="top">
-  
+A production AI receptionist purpose-built for plumbers, HVAC, electricians and field service crews. 24/7 voice agent that books jobs, qualifies leads and never lets a call go to voicemail.
+
+**Highlights**
+
+- Realtime voice agent powered by **Retell AI** with custom tools
+- **Auto appointment scheduling** — agent finds open slots and books on the call
+- **Two-way Google Calendar sync** — real-time availability, no double-booking
+- Per-business knowledge base: pricing, service area, hours, recurring jobs
+- Multi-tenant SaaS with call transcripts, AI summaries and CRM-ready handoffs
+
 ```typescript
 const heyfield = {
   problem: "Home service businesses miss calls = lost jobs",
@@ -33,32 +40,13 @@ const heyfield = {
     "Neon PostgreSQL + Drizzle ORM",
     "Clerk (multi-tenant auth)",
     "Retell AI (realtime voice agent)",
-    "Twilio + Google Calendar + Stripe"
+    "Twilio + Google Calendar + Stripe",
   ],
-  status: "Live with home service operators"
-}
+  status: "Live with home service operators",
+};
 ```
 
-</td>
-<td width="50%" valign="top">
-  
-**What makes it special:**
-
-A production AI receptionist purpose-built for plumbers, HVAC, electricians and field service crews:
-
-- Realtime voice agent powered by **Retell AI** with custom tools  
-- **Auto appointment scheduling** — agent finds open slots and books on the call  
-- **Two-way Google Calendar sync** — real-time availability, no double-booking  
-- Per-business knowledge base: pricing, service area, hours, recurring jobs  
-- Multi-tenant SaaS with call transcripts, summaries and CRM-ready handoffs
-  
-</td>
-</tr>
-</table>
-  
-
-<h2 align="center">⏬ Heyfield Architecture ⏬</h2>
-
+<h4 align="center">⏬ Heyfield Architecture ⏬</h4>
 
 ```mermaid
 flowchart TB
@@ -81,18 +69,27 @@ flowchart TB
 
   db --> dashboard[Next.js Dashboard]
 ```
+
 ---
 
 ### 📈 RevTune — AI Pricing Engine for SaaS
-<p> 
-  <img src="https://img.shields.io/badge/RevTune-AI%20Pricing%20Engine-020617?style=for-the-badge&logo=stripe&logoColor=635BFF" /> 
+
+<p>
+  <img src="https://img.shields.io/badge/RevTune-AI%20Pricing%20Engine-020617?style=for-the-badge&logo=stripe&logoColor=635BFF" />
   <img src="https://img.shields.io/badge/Status-In%20Production-16a34a?style=for-the-badge" />
 </p>
 
-<table>
-<tr>
-<td width="50%" valign="top">
-  
+An AI pricing intelligence platform for SaaS founders and indie hackers. Connect Stripe, Paddle or LemonSqueezy and get statistically-proven pricing recommendations — not vibes.
+
+**Highlights**
+
+- One-click Stripe Connect; Paddle and LemonSqueezy via API key
+- **Price elasticity modeling** — data-driven sensitivity curves per plan and segment
+- **Statistically-proven AI recommendations** — every suggestion backed by significance tests
+- **Experiment engine** — A/B pricing tests with statistical significance & confidence intervals
+- **Revenue forecasting** — predicted MRR impact, actual vs predicted tracker
+- Weekly AI Brief email — the single most impactful pricing action of the week
+
 ```typescript
 const revtune = {
   problem: "30-50% of SaaS companies are underpriced",
@@ -102,31 +99,13 @@ const revtune = {
     "Neon PostgreSQL + Drizzle ORM",
     "Clerk + Stripe Connect (OAuth)",
     "Inngest (sync + AI pipelines)",
-    "Claude API + Vercel AI SDK"
+    "Claude API + Vercel AI SDK",
   ],
-  status: "Live — Stripe / Paddle / LemonSqueezy"
-}
+  status: "Live — Stripe / Paddle / LemonSqueezy",
+};
 ```
 
-</td>
-<td width="50%" valign="top">
-
-**What makes it special:**
-
-An AI pricing intelligence platform for SaaS founders and indie hackers:
-
-- One-click Stripe Connect; Paddle and LemonSqueezy via API key
-- **Price elasticity modeling** — data-driven sensitivity curves per plan and segment
-- **Statistically-proven AI recommendations** — every suggestion backed by significance tests, not vibes
-- **Experiment engine** — A/B pricing tests with statistical significance & confidence intervals
-- **Revenue forecasting** — predicted MRR impact, actual vs predicted tracker
-- Weekly AI Brief email — the single most impactful pricing action
-
-</td>
-</tr>
-</table>
-  
-<h2 align="center">⏬ RevTune Architecture ⏬</h2>
+<h4 align="center">⏬ RevTune Architecture ⏬</h4>
 
 ```mermaid
 flowchart TB
@@ -163,11 +142,13 @@ flowchart TB
 ---
 
 ## 🧠 Tech Arsenal
-<p align="left"> 
-  <img src="https://skillicons.dev/icons?i=ts,nextjs,react,nodejs,postgres,redis,tailwind,vercel,docker,git,vscode,cloudflare" /> 
+
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=ts,nextjs,react,nodejs,postgres,redis,tailwind,vercel,docker,git,vscode,cloudflare" />
 </p>
 
-### Strong Focus Areas
+**Strong Focus Areas**
+
 - **End-to-end TypeScript systems** — Next.js 16, React 19, strict TS
 - **Multi-tenant SaaS architecture** — Clerk orgs, scoped data, billing
 - **AI product engineering** — Retell AI voice agents, Claude API, RAG
@@ -179,8 +160,6 @@ flowchart TB
 
 ## 📊 Real Impact
 
-<div align="center">
-
 | Metric | Value |
 |--------|-------|
 | 🚀 **Production SaaS Shipped** | 2 (Heyfield + RevTune) |
@@ -189,8 +168,6 @@ flowchart TB
 | 💳 **Billing Platforms Integrated** | Stripe, Paddle, LemonSqueezy |
 | 📈 **Pricing Recommendations** | Statistically-proven, elasticity-driven, A/B tested |
 | ⚡ **API Response Time** | <200ms (p95) |
-
-</div>
 
 ---
 
@@ -218,27 +195,28 @@ flowchart TB
 
 ## 📫 Let's Build Something
 
-<div align="center">
+<p>
+  <a href="mailto:meric.karpat@icloud.com"><img src="https://img.shields.io/badge/Email-meric.karpat%40icloud.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
+  <a href="https://linkedin.com/in/meric-karpat"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+  <a href="https://www.google.com/maps/place/Izmir"><img src="https://img.shields.io/badge/Location-Izmir%2C%20Turkey-00ADD8?style=for-the-badge&logo=google-maps&logoColor=white" /></a>
+</p>
 
-[![Email](https://img.shields.io/badge/Email-meric.karpat%40icloud.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:meric.karpat@icloud.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/meric-karpat)
-[![Location](https://img.shields.io/badge/Location-Izmir%2C%20Turkey-00ADD8?style=for-the-badge&logo=google-maps&logoColor=white)](https://www.google.com/maps/place/Izmir)
+**Open to:**
 
-### Open to:
-🤝 Technical co-founders for AI/SaaS projects    
-💼 Contract work or consulting on complex backend systems  
-🎙️ Speaking about SaaS architecture & AI integration  
-☕ Coffee chats about startup ideas
-
-</div>
+- 🤝 Technical co-founders for AI/SaaS projects
+- 💼 Contract work or consulting on complex backend systems
+- 🎙️ Speaking about SaaS architecture & AI integration
+- ☕ Coffee chats about startup ideas
 
 ---
 
 <div align="center">
 
-## "Ship fast, iterate faster, never stop learning."
+### "Ship fast, iterate faster, never stop learning."
 
 ⭐ If you find my work interesting, feel free to reach out or star my public repos!
 
-</div> <!-- FOOTER --> 
-  <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:25bfff,100:9600ff&height=150&section=footer" />
+</div>
+
+<!-- FOOTER -->
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:25bfff,100:9600ff&height=150&section=footer" />
