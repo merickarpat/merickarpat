@@ -33,7 +33,7 @@ const heyfield = {
     "Neon PostgreSQL + Drizzle ORM",
     "Clerk (multi-tenant auth)",
     "Retell AI (realtime voice agent)",
-    "Twilio (telephony) + Stripe (billing)"
+    "Twilio + Google Calendar + Stripe"
   ],
   status: "Live with home service operators"
 }
@@ -47,9 +47,10 @@ const heyfield = {
 A production AI receptionist purpose-built for plumbers, HVAC, electricians and field service crews:
 
 - Realtime voice agent powered by **Retell AI** with custom tools  
+- **Auto appointment scheduling** — agent finds open slots and books on the call  
+- **Two-way Google Calendar sync** — real-time availability, no double-booking  
 - Per-business knowledge base: pricing, service area, hours, recurring jobs  
-- Multi-tenant SaaS — each business gets its own number, agent and data  
-- Call transcripts, summaries, and CRM-ready handoffs
+- Multi-tenant SaaS with call transcripts, summaries and CRM-ready handoffs
   
 </td>
 </tr>
@@ -65,11 +66,14 @@ flowchart TB
   twilio --> retell[Retell AI - Realtime Voice Agent]
 
   retell --> kb[(Per-Business Knowledge Base)]
-  retell --> tools[Custom Tools: Book Job, Quote, Transfer, Capture Lead]
+  retell --> tools[Custom Tools: Check Availability, Book, Quote, Transfer]
 
   tools --> api[Next.js API Routes]
   api --> db[(Neon PostgreSQL)]
-  api --> calendar[Calendar / Dispatch]
+
+  api <--> gcal[Google Calendar - Two-Way Sync]
+  gcal --> scheduler[Auto Appointment Scheduler]
+  scheduler --> db
 
   retell --> webhook[Post-Call Webhook]
   webhook --> transcripts[Transcripts & AI Summaries]
@@ -173,6 +177,7 @@ flowchart TB
 |--------|-------|
 | 🚀 **Production SaaS Shipped** | 2 (Heyfield + RevTune) |
 | 📞 **Voice AI Calls Handled** | 24/7 via Retell AI for home service operators |
+| 📅 **Appointments Booked** | Auto-scheduled with two-way Google Calendar sync |
 | 💳 **Billing Platforms Integrated** | Stripe, Paddle, LemonSqueezy |
 | 📈 **Pricing Experiments Supported** | A/B tests, forecasts, impact tracking |
 | ⚡ **API Response Time** | <200ms (p95) |
