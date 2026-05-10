@@ -52,27 +52,31 @@ const heyfield = {
 
 <h4 align="center">⏬ Heyfield Architecture ⏬</h4>
 
+<p align="center">
+  <img src="https://kroki.io/mermaid/svg/eNpdUctOwzAQvPMVe6RSwwcghJQUCVWgqm0ierB6cJJtYup4Iz8I_Xu8SR_AyY-ZWc-MD5qGqpXWQ5HdAVRSa7RiEZynDi0s4tlBFpwy6BysQlei3UOSPIMflFYkinGBAjX2LZnTPk6ZoJFl0aPWYjsukC4hgS1K7VWH8EGqQkgbNJ5VE3VUHUtxv0abXB9-MzRorBuETDqc_aN7Iu3OpqHgwyMsWqyOkH5JpWUZ7fjTHDKi4xw2gTzOobDSuENMw4ZZM46SvRIr_PYPnw7S9RK2FDw65kRkZNTR2wrJwJqcbyzmm_fZBX9iQhNLFK9EjUbuD00tbYxdDJTs5Anyk6mYz7RxoKtarAPXngZPkPY9KeO72ArkF4gFV97Zxt8OBizbGE-wq4S_DXbTDUvP4FQW566s6r0TxW0P0tT8P3noOmnVlPkX9_ZoXU576dqSpK2vfb1cbvZ3P0o6yWo=" alt="Heyfield Architecture" />
+</p>
+
+<details>
+<summary>View diagram source (Mermaid)</summary>
+
 ```mermaid
 flowchart TB
   caller[Customer Calls Business Number] --> twilio[Twilio Telephony]
   twilio --> retell[Retell AI - Realtime Voice Agent]
-
   retell --> kb[(Per-Business Knowledge Base)]
   retell --> tools[Custom Tools: Check Availability, Book, Quote, Transfer]
-
   tools --> api[Next.js API Routes]
   api --> db[(Neon PostgreSQL)]
-
   api <--> gcal[Google Calendar - Two-Way Sync]
   gcal --> scheduler[Auto Appointment Scheduler]
   scheduler --> db
-
   retell --> webhook[Post-Call Webhook]
-  webhook --> transcripts[Transcripts & AI Summaries]
+  webhook --> transcripts[Transcripts and AI Summaries]
   transcripts --> db
-
   db --> dashboard[Next.js Dashboard]
 ```
+
+</details>
 
 ---
 
@@ -115,29 +119,31 @@ const revtune = {
 
 <h4 align="center">⏬ RevTune Architecture ⏬</h4>
 
+<p align="center">
+  <img src="https://kroki.io/mermaid/svg/eNptUsFu2zAMve8reFyBdv2DAU6WAdmSzIuD9SDkIEuMrUaWMklu6379KNmxnW0nUeR71HukTtq-ipq7AIfFBwAfnLogK9IBj5BzKXUMNthYU_xuEd87ui6JUmGJeISHh88grDEoAvuRtaEGbiRk-Rq-YwfLvmKdP1L7AZc4vjOCrY2p0Aco6ALfbJlQr1jW1p49WyitlangaUgcR2KUGinxbqxruFbvyHZDxIOyBja8Qxf7jYAElyX7uEOq59aHymHxc3MXUbJM5QbJu_Bs25-wMpUyxITtfn9Pvltn7mFz-DWjoOY-KKFCx3LiIKzGBGytRD3D-sCDp_mSxAjhGgpVGXWi0BBz1Dz1TDSu2FLzViJka4iPxLH00o5pbdR1ANKVqxQr41VV03O5sy9oYI_CNg0amebj056eEM-6g4VTeJpberugU4Ql9mqMp2Fkjws40OL87esz2tTrZB0KcsP2SCpahK9DgjwkqxOpl91cOP2lTISWxvPiyS9KJQJKODguzv2Arl1nFMpeLaesQ09m6dl4wKrhKm1i2HD_GbivS8udZDt8C5-ePXy5Zo5_txux_9E8r90omxd6lf_2ul31VPoD2XQ2-w==" alt="RevTune Architecture" />
+</p>
+
+<details>
+<summary>View diagram source (Mermaid)</summary>
+
 ```mermaid
 flowchart TB
-  stripe[Stripe / Paddle / LemonSqueezy / Chargebee] --> connect[OAuth & API Key Connectors]
+  stripe[Stripe / Paddle / LemonSqueezy / Chargebee] --> connect[OAuth and API Key Connectors]
   connect --> sync[Inngest Sync Jobs]
   webhooks[Billing Webhooks] --> sync
-
   sync --> normalize[Normalization Layer]
   normalize --> db[(Neon PostgreSQL)]
-
   db --> metrics[Metrics Engine - MRR, Churn, LTV]
   db --> elasticity[Price Elasticity Model]
   db --> stats[Statistical Significance Layer]
-
   elasticity --> ai[Claude AI Pricing Engine]
   stats --> ai
-  ai --> insights[Proven Recommendations & Weekly Brief]
-
+  ai --> insights[Proven Recommendations and Weekly Brief]
   db --> experiments[Experiment Engine - A/B Tests]
   stats --> experiments
   db --> forecast[Revenue Forecasting]
   experiments --> impact[Actual vs Predicted Tracker]
   forecast --> impact
-
   insights --> resend[Resend Email]
   metrics --> dashboard[Next.js Dashboard]
   insights --> dashboard
@@ -146,6 +152,8 @@ flowchart TB
   impact --> dashboard
   elasticity --> dashboard
 ```
+
+</details>
 
 ---
 
