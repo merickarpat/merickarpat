@@ -79,11 +79,11 @@ flowchart TB
   <img src="https://img.shields.io/badge/Status-In%20Production-16a34a?style=for-the-badge" />
 </p>
 
-An AI pricing intelligence platform for SaaS founders and indie hackers. Connect Stripe, Paddle or LemonSqueezy and get statistically-proven pricing recommendations — not vibes.
+An AI pricing intelligence platform for SaaS founders and indie hackers. Connect Stripe, Paddle, LemonSqueezy or Chargebee and get statistically-proven pricing recommendations — not vibes.
 
 **Highlights**
 
-- One-click Stripe Connect; Paddle and LemonSqueezy via API key
+- One-click Stripe Connect; Paddle, LemonSqueezy and **Chargebee** via API key
 - **Price elasticity modeling** — data-driven sensitivity curves per plan and segment
 - **Statistically-proven AI recommendations** — every suggestion backed by significance tests
 - **Experiment engine** — A/B pricing tests with statistical significance & confidence intervals
@@ -101,7 +101,7 @@ const revtune = {
     "Inngest (sync + AI pipelines)",
     "Claude API + Vercel AI SDK",
   ],
-  status: "Live — Stripe / Paddle / LemonSqueezy",
+  status: "Live — Stripe / Paddle / LemonSqueezy / Chargebee",
 };
 ```
 
@@ -109,7 +109,7 @@ const revtune = {
 
 ```mermaid
 flowchart TB
-  stripe[Stripe / Paddle / LemonSqueezy] --> connect[OAuth & API Key Connectors]
+  stripe[Stripe / Paddle / LemonSqueezy / Chargebee] --> connect[OAuth & API Key Connectors]
   connect --> sync[Inngest Sync Jobs]
   webhooks[Billing Webhooks] --> sync
 
@@ -165,7 +165,7 @@ flowchart TB
 | 🚀 **Production SaaS Shipped** | 2 (Heyfield + RevTune) |
 | 📞 **Voice AI Calls Handled** | 24/7 via Retell AI for home service operators |
 | 📅 **Appointments Booked** | Auto-scheduled with two-way Google Calendar sync |
-| 💳 **Billing Platforms Integrated** | Stripe, Paddle, LemonSqueezy |
+| 💳 **Billing Platforms Integrated** | Stripe, Paddle, LemonSqueezy, Chargebee |
 | 📈 **Pricing Recommendations** | Statistically-proven, elasticity-driven, A/B tested |
 | ⚡ **API Response Time** | <200ms (p95) |
 
