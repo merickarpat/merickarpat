@@ -14,11 +14,11 @@
 
 ## 🚀 What I'm Shipping
 
-### 📞 Heyfield — AI Voice Receptionist for Home Service Businesses
+### <img src="assets/heyfield-icon.svg" width="28" align="absmiddle" /> Heyfield — AI Voice Receptionist for Home Service Businesses
 
 <p>
-  <img src="https://img.shields.io/badge/Heyfield-AI%20Voice%20Receptionist-0F172A?style=for-the-badge&logo=phone&logoColor=22c55e" />
   <img src="https://img.shields.io/badge/Status-In%20Production-16a34a?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Stack-Next.js%2016%20·%20Retell%20AI%20·%20Twilio-0F172A?style=for-the-badge" />
 </p>
 
 A production AI receptionist purpose-built for plumbers, HVAC, electricians and field service crews. 24/7 voice agent that books jobs, qualifies leads and never lets a call go to voicemail.
@@ -72,11 +72,11 @@ flowchart TB
 
 ---
 
-### 📈 RevTune — AI Pricing Engine for SaaS
+### <img src="assets/revtune-icon.svg" width="28" align="absmiddle" /> RevTune — AI Pricing Engine for SaaS
 
 <p>
-  <img src="https://img.shields.io/badge/RevTune-AI%20Pricing%20Engine-020617?style=for-the-badge&logo=stripe&logoColor=635BFF" />
   <img src="https://img.shields.io/badge/Status-In%20Production-16a34a?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Stack-Next.js%2016%20·%20Claude%20AI%20·%20Inngest-020617?style=for-the-badge" />
 </p>
 
 An AI pricing intelligence platform for SaaS founders and indie hackers. Connect Stripe, Paddle, LemonSqueezy or Chargebee and get statistically-proven pricing recommendations — not vibes.
