@@ -96,7 +96,7 @@ flowchart TB
 ```typescript
 const revtune = {
   problem: "30-50% of SaaS companies are underpriced",
-  solution: "Connect Stripe. Get AI pricing recommendations. Grow MRR.",
+  solution: "Connect Stripe. Get statistically-proven pricing recommendations.",
   tech: [
     "Next.js 16 (App Router, React 19)",
     "Neon PostgreSQL + Drizzle ORM",
@@ -116,8 +116,9 @@ const revtune = {
 An AI pricing intelligence platform for SaaS founders and indie hackers:
 
 - One-click Stripe Connect; Paddle and LemonSqueezy via API key
-- AI recommendations: price sensitivity, geo pricing, plan structure
-- **Experiment engine** — A/B pricing tests with statistical significance
+- **Price elasticity modeling** — data-driven sensitivity curves per plan and segment
+- **Statistically-proven AI recommendations** — every suggestion backed by significance tests, not vibes
+- **Experiment engine** — A/B pricing tests with statistical significance & confidence intervals
 - **Revenue forecasting** — predicted MRR impact, actual vs predicted tracker
 - Weekly AI Brief email — the single most impactful pricing action
 
@@ -137,10 +138,15 @@ flowchart TB
   normalize --> db[(Neon PostgreSQL)]
 
   db --> metrics[Metrics Engine - MRR, Churn, LTV]
-  db --> ai[Claude AI Pricing Engine]
-  ai --> insights[Recommendations & Weekly Brief]
+  db --> elasticity[Price Elasticity Model]
+  db --> stats[Statistical Significance Layer]
+
+  elasticity --> ai[Claude AI Pricing Engine]
+  stats --> ai
+  ai --> insights[Proven Recommendations & Weekly Brief]
 
   db --> experiments[Experiment Engine - A/B Tests]
+  stats --> experiments
   db --> forecast[Revenue Forecasting]
   experiments --> impact[Actual vs Predicted Tracker]
   forecast --> impact
@@ -151,6 +157,7 @@ flowchart TB
   experiments --> dashboard
   forecast --> dashboard
   impact --> dashboard
+  elasticity --> dashboard
 ```
 
 ---
@@ -164,6 +171,7 @@ flowchart TB
 - **End-to-end TypeScript systems** — Next.js 16, React 19, strict TS
 - **Multi-tenant SaaS architecture** — Clerk orgs, scoped data, billing
 - **AI product engineering** — Retell AI voice agents, Claude API, RAG
+- **Statistically-grounded ML** — elasticity modeling, significance testing, confidence intervals
 - **Postgres at scale** — Drizzle ORM, schema design, migrations on Neon
 - **Async pipelines** — Inngest jobs, webhooks, cron, retries
 
@@ -179,7 +187,7 @@ flowchart TB
 | 📞 **Voice AI Calls Handled** | 24/7 via Retell AI for home service operators |
 | 📅 **Appointments Booked** | Auto-scheduled with two-way Google Calendar sync |
 | 💳 **Billing Platforms Integrated** | Stripe, Paddle, LemonSqueezy |
-| 📈 **Pricing Experiments Supported** | A/B tests, forecasts, impact tracking |
+| 📈 **Pricing Recommendations** | Statistically-proven, elasticity-driven, A/B tested |
 | ⚡ **API Response Time** | <200ms (p95) |
 
 </div>
@@ -192,6 +200,7 @@ flowchart TB
 
 - **Type-safe everything** — TypeScript end-to-end, Zod validation, Drizzle types
 - **AI-first product thinking** — voice agents, structured LLM output, evals
+- **Statistically grounded** — no advice without significance, no forecasts without confidence intervals
 - **Observability built-in** — Sentry, structured logging, PostHog funnels
 - **Zero-downtime deploys** — Vercel CI/CD, gradual rollouts
 - **Cost-conscious scaling** — cache aggressively, batch AI calls, edge where it matters
