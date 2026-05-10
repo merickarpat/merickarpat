@@ -1,22 +1,23 @@
 <div align="center">
 <!-- HEADER -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:25bfff,100:9600ff&height=200&section=header&text=Meriç%20Karpat&fontSize=48&fontColor=ffffff&animation=twinkling" />
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:25bfff,100:9600ff&height=200&section=header&text=Meri%C3%A7%20Karpat&fontSize=48&fontColor=ffffff&animation=twinkling" />
 </div> 
 
 <!-- INTRO -->
 <p align="center"> 
   <a href="https://github.com/merickarpat"> 
-    <img src="https://readme-typing-svg.herokuapp.com?size=24&duration=4000&pause=800&color=3B82F6&center=true&vCenter=true&width=650&lines=Full+Stack+JavaScript+Developer;SaaS+Founder;AI-powered+Platforms;DashPilot+%7C+Amazon+Analytics;Incident+Cortex+%7C+Incident+and+Runbook+Automation" /> 
+    <img src="https://readme-typing-svg.herokuapp.com?size=24&duration=4000&pause=800&color=3B82F6&center=true&vCenter=true&width=650&lines=Full+Stack+TypeScript+Engineer;SaaS+Founder;AI-powered+Platforms;Heyfield+%7C+AI+Voice+Receptionist;RevTune+%7C+AI+Pricing+Engine+for+SaaS" /> 
   </a> 
 </p>
 
 ---
 
-## 🚀 What I'm Building
+## 🚀 What I'm Shipping
 
-### 🌐 DashPilot — AI-powered Amazon Analytics (SaaS)
+### 📞 Heyfield — AI Voice Receptionist for Home Service Businesses
 <p>
-  <img src="https://img.shields.io/badge/DashPilot-AI%20Amazon%20Analytics-0F172A?style=for-the-badge&logo=amazon" />
+  <img src="https://img.shields.io/badge/Heyfield-AI%20Voice%20Receptionist-0F172A?style=for-the-badge&logo=phone&logoColor=22c55e" />
+  <img src="https://img.shields.io/badge/Status-In%20Production-16a34a?style=for-the-badge" />
 </p>
 
 <table>
@@ -24,17 +25,17 @@
 <td width="50%" valign="top">
   
 ```typescript
-const dashpilot = {
-  problem: "Amazon sellers drowning in data",
-  solution: "AI-driven insights + predictive scoring",
+const heyfield = {
+  problem: "Home service businesses miss calls = lost jobs",
+  solution: "24/7 AI voice agent that books jobs and captures leads",
   tech: [
-    "Next.js 14 (App Router)",
-    "PostgreSQL + Prisma",
-    "Redis (caching & workers)",
-    "OpenAI + Custom ML models",
-    "Payments + Multi-tenant SaaS"
+    "Next.js 16 (App Router, React 19)",
+    "Neon PostgreSQL + Drizzle ORM",
+    "Clerk (multi-tenant auth)",
+    "Retell AI (realtime voice agent)",
+    "Twilio + Google Calendar + Stripe"
   ],
-  status: "Private Beta → 35+ active users"
+  status: "Live with home service operators"
 }
 ```
 
@@ -43,42 +44,49 @@ const dashpilot = {
   
 **What makes it special:**
 
-A full commercial analytics platform for Amazon sellers:
+A production AI receptionist purpose-built for plumbers, HVAC, electricians and field service crews:
 
-- Keepa CSV/Excel ingestion & transformation  
-- Insight engine, predictive scoring & dashboards  
-- PostgreSQL · Prisma · Redis · BullMQ 
-- Designed for high-volume global use
+- Realtime voice agent powered by **Retell AI** with custom tools  
+- **Auto appointment scheduling** — agent finds open slots and books on the call  
+- **Two-way Google Calendar sync** — real-time availability, no double-booking  
+- Per-business knowledge base: pricing, service area, hours, recurring jobs  
+- Multi-tenant SaaS with call transcripts, summaries and CRM-ready handoffs
   
 </td>
 </tr>
 </table>
   
 
-<h2 align="center">⏬DashPilot Architecture⏬</h2>
+<h2 align="center">⏬ Heyfield Architecture ⏬</h2>
 
 
 ```mermaid
 flowchart TB
-  upload[Keepa CSV / Excel Upload] --> ingest[Ingestion & Parsing]
-  ingest --> db[(PostgreSQL)]
+  caller[Customer Calls Business Number] --> twilio[Twilio Telephony]
+  twilio --> retell[Retell AI - Realtime Voice Agent]
 
-  db --> queue[Job Queue / Workers]
-  queue --> ai[AI Engines - OpenAI & Ollama]
-  ai --> insights[Product Insights & Scores]
+  retell --> kb[(Per-Business Knowledge Base)]
+  retell --> tools[Custom Tools: Check Availability, Book, Quote, Transfer]
 
-  insights --> db
+  tools --> api[Next.js API Routes]
+  api --> db[(Neon PostgreSQL)]
+
+  api <--> gcal[Google Calendar - Two-Way Sync]
+  gcal --> scheduler[Auto Appointment Scheduler]
+  scheduler --> db
+
+  retell --> webhook[Post-Call Webhook]
+  webhook --> transcripts[Transcripts & AI Summaries]
+  transcripts --> db
 
   db --> dashboard[Next.js Dashboard]
-  insights --> dashboard
-
-  db --> reports[Analytics & Reports]
 ```
 ---
 
-### ⚡ Incident Cortex — AI-driven Incident & Runbook Automation
+### 📈 RevTune — AI Pricing Engine for SaaS
 <p> 
-  <img src="https://img.shields.io/badge/Incident%20Cortex-AI%20Runbook%20Search-020617?style=for-the-badge&logo=slack&logoColor=36C5F0" /> 
+  <img src="https://img.shields.io/badge/RevTune-AI%20Pricing%20Engine-020617?style=for-the-badge&logo=stripe&logoColor=635BFF" /> 
+  <img src="https://img.shields.io/badge/Status-In%20Production-16a34a?style=for-the-badge" />
 </p>
 
 <table>
@@ -86,17 +94,17 @@ flowchart TB
 <td width="50%" valign="top">
   
 ```typescript
-const incidentCortex = {
-  problem: "Engineers wasting time searching docs",
-  solution: "Semantic search + Slack automation",
+const revtune = {
+  problem: "30-50% of SaaS companies are underpriced",
+  solution: "Connect Stripe. Get statistically-proven pricing recommendations.",
   tech: [
-    "Express + TypeScript",
-    "NeonDB + pgvector",
-    "OpenAI Embeddings (RAG)",
-    "Slack API (events + commands)",
-    "Drizzle ORM"
+    "Next.js 16 (App Router, React 19)",
+    "Neon PostgreSQL + Drizzle ORM",
+    "Clerk + Stripe Connect (OAuth)",
+    "Inngest (sync + AI pipelines)",
+    "Claude API + Vercel AI SDK"
   ],
-  status: "Production-ready backend"
+  status: "Live — Stripe / Paddle / LemonSqueezy"
 }
 ```
 
@@ -105,50 +113,67 @@ const incidentCortex = {
 
 **What makes it special:**
 
-An AI-first backend built to reduce MTTR by giving engineers instant answers:
+An AI pricing intelligence platform for SaaS founders and indie hackers:
 
-- Semantic search over runbooks (pgvector)
-- Automatic embedding pipeline
-- Slack slash commands & interactive workflows
-- Express + TypeScript + Neon + Drizzle ORM
+- One-click Stripe Connect; Paddle and LemonSqueezy via API key
+- **Price elasticity modeling** — data-driven sensitivity curves per plan and segment
+- **Statistically-proven AI recommendations** — every suggestion backed by significance tests, not vibes
+- **Experiment engine** — A/B pricing tests with statistical significance & confidence intervals
+- **Revenue forecasting** — predicted MRR impact, actual vs predicted tracker
+- Weekly AI Brief email — the single most impactful pricing action
 
 </td>
 </tr>
 </table>
   
-<h2 align="center">⏬Incident Cortex Architecture⏬</h2>
+<h2 align="center">⏬ RevTune Architecture ⏬</h2>
 
 ```mermaid
 flowchart TB
-  slack[Slack Events & Commands] --> api[Express API & Slack Controller]
-  api --> runbook[Runbook Service]
+  stripe[Stripe / Paddle / LemonSqueezy] --> connect[OAuth & API Key Connectors]
+  connect --> sync[Inngest Sync Jobs]
+  webhooks[Billing Webhooks] --> sync
 
-  %% indexing path
-  runbook --> db[(NeonDB with pgvector)]
-  runbook --> workers[Background Workers]
-  workers --> embed[OpenAI Embeddings]
-  embed --> db
+  sync --> normalize[Normalization Layer]
+  normalize --> db[(Neon PostgreSQL)]
 
-  %% query path
-  api --> search[Semantic Search Service]
-  search --> db
-  db --> search
-  search --> response[Slack Response Message]
+  db --> metrics[Metrics Engine - MRR, Churn, LTV]
+  db --> elasticity[Price Elasticity Model]
+  db --> stats[Statistical Significance Layer]
+
+  elasticity --> ai[Claude AI Pricing Engine]
+  stats --> ai
+  ai --> insights[Proven Recommendations & Weekly Brief]
+
+  db --> experiments[Experiment Engine - A/B Tests]
+  stats --> experiments
+  db --> forecast[Revenue Forecasting]
+  experiments --> impact[Actual vs Predicted Tracker]
+  forecast --> impact
+
+  insights --> resend[Resend Email]
+  metrics --> dashboard[Next.js Dashboard]
+  insights --> dashboard
+  experiments --> dashboard
+  forecast --> dashboard
+  impact --> dashboard
+  elasticity --> dashboard
 ```
 
 ---
 
 ## 🧠 Tech Arsenal
 <p align="left"> 
-  <img src="https://skillicons.dev/icons?i=vscode,ts,nextjs,express,nodejs,react,postgres,redis,docker,prisma,git,cloudflare,vercel" /> 
+  <img src="https://skillicons.dev/icons?i=ts,nextjs,react,nodejs,postgres,redis,tailwind,vercel,docker,git,vscode,cloudflare" /> 
 </p>
 
 ### Strong Focus Areas
-- **End-to-end TypeScript systems**
-- **Scalable backend architecture (queues, caching, workers)**
-- **AI & LLM integration (RAG, embeddings, semantic search)**
-- **SaaS platform design (auth, billing, usage metering)**
-- **PostgreSQL performance, schema design & migrations**
+- **End-to-end TypeScript systems** — Next.js 16, React 19, strict TS
+- **Multi-tenant SaaS architecture** — Clerk orgs, scoped data, billing
+- **AI product engineering** — Retell AI voice agents, Claude API, RAG
+- **Statistically-grounded ML** — elasticity modeling, significance testing, confidence intervals
+- **Postgres at scale** — Drizzle ORM, schema design, migrations on Neon
+- **Async pipelines** — Inngest jobs, webhooks, cron, retries
 
 ---
 
@@ -158,11 +183,12 @@ flowchart TB
 
 | Metric | Value |
 |--------|-------|
-| 🚀 **SaaS Products Built** | 2 (in production) |
-| 🤖 **AI Models Integrated** | OpenAI GPT-4, Embeddings, Custom ML |
+| 🚀 **Production SaaS Shipped** | 2 (Heyfield + RevTune) |
+| 📞 **Voice AI Calls Handled** | 24/7 via Retell AI for home service operators |
+| 📅 **Appointments Booked** | Auto-scheduled with two-way Google Calendar sync |
+| 💳 **Billing Platforms Integrated** | Stripe, Paddle, LemonSqueezy |
+| 📈 **Pricing Recommendations** | Statistically-proven, elasticity-driven, A/B tested |
 | ⚡ **API Response Time** | <200ms (p95) |
-| 💾 **Data Processed** | 5M+ product records |
-| 👥 **Active Private Beta Users** | 35+ (and growing) |
 
 </div>
 
@@ -172,20 +198,21 @@ flowchart TB
 
 > **"Build for scale from day one, optimize for developer experience always."**
 
-- **Type-safe everything** — TypeScript end-to-end, Zod validation, Prisma types
-- **AI-first thinking** — RAG > fine-tuning, semantic search > keyword matching
-- **Observability built-in** — OpenTelemetry, structured logging, error tracking
-- **Zero-downtime deploys** — CI/CD with automated testing, gradual rollouts
-- **Cost-conscious scaling** — Redis for hot data, PostgreSQL for everything else
+- **Type-safe everything** — TypeScript end-to-end, Zod validation, Drizzle types
+- **AI-first product thinking** — voice agents, structured LLM output, evals
+- **Statistically grounded** — no advice without significance, no forecasts without confidence intervals
+- **Observability built-in** — Sentry, structured logging, PostHog funnels
+- **Zero-downtime deploys** — Vercel CI/CD, gradual rollouts
+- **Cost-conscious scaling** — cache aggressively, batch AI calls, edge where it matters
 
 ---
 
 ## 💡 Side Interests
 
-- **Self-hosted LLMs** → Experimenting with Ollama for cost optimization
-- **Vector databases** → Building custom pgvector indexes for sub-second search
-- **Developer tools** → VSCode extensions, CLI tools, automation scripts
-- **SaaS pricing models** → Usage-based vs. subscription vs. hybrid strategies
+- **Realtime voice AI** — latency budgets, barge-in, tool-use during calls
+- **Pricing & monetization** — willingness-to-pay, geo pricing, packaging
+- **Developer tools** — internal CLIs, codegen, AI-assisted workflows
+- **Vector search & RAG** — pgvector indexes for sub-second retrieval
 
 ---
 
@@ -199,7 +226,7 @@ flowchart TB
 
 ### Open to:
 🤝 Technical co-founders for AI/SaaS projects    
-💼 Contract work or consulting on complex backend systems
+💼 Contract work or consulting on complex backend systems  
 🎙️ Speaking about SaaS architecture & AI integration  
 ☕ Coffee chats about startup ideas
 
@@ -211,8 +238,7 @@ flowchart TB
 
 ## "Ship fast, iterate faster, never stop learning."
 
-⭐ If you find my work interesting, feel free to contact me or star my public repos!
+⭐ If you find my work interesting, feel free to reach out or star my public repos!
 
 </div> <!-- FOOTER --> 
   <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:25bfff,100:9600ff&height=150&section=footer" />
-
