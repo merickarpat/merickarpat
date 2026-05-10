@@ -120,7 +120,7 @@ const revtune = {
 <h4 align="center">⏬ RevTune Architecture ⏬</h4>
 
 <p align="center">
-  <img src="https://mermaid.ink/svg/Zmxvd2NoYXJ0IFRCCiAgc3RyaXBlW1N0cmlwZSAvIFBhZGRsZSAvIExlbW9uU3F1ZWV6eSAvIENoYXJnZWJlZV0gLS0+IGNvbm5lY3RbT0F1dGggYW5kIEFQSSBLZXkgQ29ubmVjdG9yc10KICBjb25uZWN0IC0tPiBzeW5jW0lubmdlc3QgU3luYyBKb2JzXQogIHdlYmhvb2tzW0JpbGxpbmcgV2ViaG9va3NdIC0tPiBzeW5jCiAgc3luYyAtLT4gbm9ybWFsaXplW05vcm1hbGl6YXRpb24gTGF5ZXJdCiAgbm9ybWFsaXplIC0tPiBkYlsoTmVvbiBQb3N0Z3JlU1FMKV0KICBkYiAtLT4gbWV0cmljc1tNZXRyaWNzIEVuZ2luZSAtIE1SUiwgQ2h1cm4sIExUVl0KICBkYiAtLT4gZWxhc3RpY2l0eVtQcmljZSBFbGFzdGljaXR5IE1vZGVsXQogIGRiIC0tPiBzdGF0c1tTdGF0aXN0aWNhbCBTaWduaWZpY2FuY2UgTGF5ZXJdCiAgZWxhc3RpY2l0eSAtLT4gYWlbQ2xhdWRlIEFJIFByaWNpbmcgRW5naW5lXQogIHN0YXRzIC0tPiBhaQogIGFpIC0tPiBpbnNpZ2h0c1tQcm92ZW4gUmVjb21tZW5kYXRpb25zIGFuZCBXZWVrbHkgQnJpZWZdCiAgZGIgLS0+IGV4cGVyaW1lbnRzW0V4cGVyaW1lbnQgRW5naW5lIC0gQS9CIFRlc3RzXQogIHN0YXRzIC0tPiBleHBlcmltZW50cwogIGRiIC0tPiBmb3JlY2FzdFtSZXZlbnVlIEZvcmVjYXN0aW5nXQogIGV4cGVyaW1lbnRzIC0tPiBpbXBhY3RbQWN0dWFsIHZzIFByZWRpY3RlZCBUcmFja2VyXQogIGZvcmVjYXN0IC0tPiBpbXBhY3QKICBpbnNpZ2h0cyAtLT4gcmVzZW5kW1Jlc2VuZCBFbWFpbF0KICBtZXRyaWNzIC0tPiBkYXNoYm9hcmRbTmV4dC5qcyBEYXNoYm9hcmRdCiAgaW5zaWdodHMgLS0+IGRhc2hib2FyZAogIGV4cGVyaW1lbnRzIC0tPiBkYXNoYm9hcmQKICBmb3JlY2FzdCAtLT4gZGFzaGJvYXJkCiAgaW1wYWN0IC0tPiBkYXNoYm9hcmQKICBlbGFzdGljaXR5IC0tPiBkYXNoYm9hcmQK" alt="RevTune Architecture" />
+  <img src="https://mermaid.ink/svg/Zmxvd2NoYXJ0IFRCCiAgc3JjW1N0cmlwZSAvIFBhZGRsZSAvIExlbW9uU3F1ZWV6eSAvIENoYXJnZWJlZV0gLS0+IHN5bmNbSW5uZ2VzdCBTeW5jIEpvYnNdCiAgc3luYyAtLT4gZGJbKE5lb24gUG9zdGdyZVNRTCldCiAgZGIgLS0+IGVsYXN0aWNpdHlbUHJpY2UgRWxhc3RpY2l0eSBNb2RlbF0KICBkYiAtLT4gc3RhdHNbU3RhdGlzdGljYWwgU2lnbmlmaWNhbmNlXQogIGVsYXN0aWNpdHkgLS0+IGFpW0NsYXVkZSBBSSBQcmljaW5nIEVuZ2luZV0KICBzdGF0cyAtLT4gYWkKICBhaSAtLT4gaW5zaWdodHNbUHJvdmVuIFJlY29tbWVuZGF0aW9uc10KICBkYiAtLT4gZXhwW0EvQiBFeHBlcmltZW50IEVuZ2luZV0KICBkYiAtLT4gZm9yZWNhc3RbUmV2ZW51ZSBGb3JlY2FzdGluZ10KICBleHAgLS0+IGltcGFjdFtBY3R1YWwgdnMgUHJlZGljdGVkXQogIGZvcmVjYXN0IC0tPiBpbXBhY3QKICBpbnNpZ2h0cyAtLT4gZGFzaFtOZXh0LmpzIERhc2hib2FyZF0KICBpbXBhY3QgLS0+IGRhc2gKICBpbnNpZ2h0cyAtLT4gZW1haWxbV2Vla2x5IEJyaWVmIEVtYWlsXQo" alt="RevTune Architecture" />
 </p>
 
 <details>
@@ -128,29 +128,20 @@ const revtune = {
 
 ```mermaid
 flowchart TB
-  stripe[Stripe / Paddle / LemonSqueezy / Chargebee] --> connect[OAuth and API Key Connectors]
-  connect --> sync[Inngest Sync Jobs]
-  webhooks[Billing Webhooks] --> sync
-  sync --> normalize[Normalization Layer]
-  normalize --> db[(Neon PostgreSQL)]
-  db --> metrics[Metrics Engine - MRR, Churn, LTV]
+  src[Stripe / Paddle / LemonSqueezy / Chargebee] --> sync[Inngest Sync Jobs]
+  sync --> db[(Neon PostgreSQL)]
   db --> elasticity[Price Elasticity Model]
-  db --> stats[Statistical Significance Layer]
+  db --> stats[Statistical Significance]
   elasticity --> ai[Claude AI Pricing Engine]
   stats --> ai
-  ai --> insights[Proven Recommendations and Weekly Brief]
-  db --> experiments[Experiment Engine - A/B Tests]
-  stats --> experiments
+  ai --> insights[Proven Recommendations]
+  db --> exp[A/B Experiment Engine]
   db --> forecast[Revenue Forecasting]
-  experiments --> impact[Actual vs Predicted Tracker]
+  exp --> impact[Actual vs Predicted]
   forecast --> impact
-  insights --> resend[Resend Email]
-  metrics --> dashboard[Next.js Dashboard]
-  insights --> dashboard
-  experiments --> dashboard
-  forecast --> dashboard
-  impact --> dashboard
-  elasticity --> dashboard
+  insights --> dash[Next.js Dashboard]
+  impact --> dash
+  insights --> email[Weekly Brief Email]
 ```
 
 </details>
