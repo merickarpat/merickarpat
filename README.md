@@ -17,9 +17,12 @@
 ### <img src="assets/heyfield-icon.svg" width="28" align="absmiddle" /> Heyfield — AI Voice Receptionist for Home Service Businesses
 
 <p>
+  <a href="https://heyfield.app"><img src="https://img.shields.io/badge/Live-heyfield.app-22c55e?style=for-the-badge&logo=googlechrome&logoColor=white" /></a>
   <img src="https://img.shields.io/badge/Status-In%20Production-16a34a?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Stack-Next.js%2016%20·%20Retell%20AI%20·%20Twilio-0F172A?style=for-the-badge" />
 </p>
+
+🔗 **Live at [heyfield.app](https://heyfield.app)**
 
 A production AI receptionist purpose-built for plumbers, HVAC, electricians and field service crews. 24/7 voice agent that books jobs, qualifies leads and never lets a call go to voicemail.
 
@@ -33,6 +36,7 @@ A production AI receptionist purpose-built for plumbers, HVAC, electricians and 
 
 ```typescript
 const heyfield = {
+  url: "https://heyfield.app",
   problem: "Home service businesses miss calls = lost jobs",
   solution: "24/7 AI voice agent that books jobs and captures leads",
   tech: [
@@ -75,9 +79,12 @@ flowchart TB
 ### <img src="assets/revtune-icon.svg" width="28" align="absmiddle" /> RevTune — AI Pricing Engine for SaaS
 
 <p>
+  <a href="https://revtune.io"><img src="https://img.shields.io/badge/Live-revtune.io-7c5fd6?style=for-the-badge&logo=googlechrome&logoColor=white" /></a>
   <img src="https://img.shields.io/badge/Status-In%20Production-16a34a?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Stack-Next.js%2016%20·%20Claude%20AI%20·%20Inngest-020617?style=for-the-badge" />
 </p>
+
+🔗 **Live at [revtune.io](https://revtune.io)**
 
 An AI pricing intelligence platform for SaaS founders and indie hackers. Connect Stripe, Paddle, LemonSqueezy or Chargebee and get statistically-proven pricing recommendations — not vibes.
 
@@ -92,6 +99,7 @@ An AI pricing intelligence platform for SaaS founders and indie hackers. Connect
 
 ```typescript
 const revtune = {
+  url: "https://revtune.io",
   problem: "30-50% of SaaS companies are underpriced",
   solution: "Connect Stripe. Get statistically-proven pricing recommendations.",
   tech: [
@@ -162,7 +170,7 @@ flowchart TB
 
 | Metric | Value |
 |--------|-------|
-| 🚀 **Production SaaS Shipped** | 2 (Heyfield + RevTune) |
+| 🚀 **Production SaaS Shipped** | 2 ([Heyfield](https://heyfield.app) + [RevTune](https://revtune.io)) |
 | 📞 **Voice AI Calls Handled** | 24/7 via Retell AI for home service operators |
 | 📅 **Appointments Booked** | Auto-scheduled with two-way Google Calendar sync |
 | 💳 **Billing Platforms Integrated** | Stripe, Paddle, LemonSqueezy, Chargebee |
