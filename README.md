@@ -32,8 +32,8 @@ const heyfield = {
     "Next.js 16 (App Router, React 19)",
     "Neon PostgreSQL + Drizzle ORM",
     "Clerk (multi-tenant auth)",
-    "Twilio + Realtime Voice AI",
-    "Stripe (subscription billing)"
+    "Retell AI (realtime voice agent)",
+    "Twilio (telephony) + Stripe (billing)"
   ],
   status: "Live with home service operators"
 }
@@ -46,9 +46,9 @@ const heyfield = {
 
 A production AI receptionist purpose-built for plumbers, HVAC, electricians and field service crews:
 
-- Real-time voice AI that books appointments and qualifies leads  
-- Knows pricing, service area, hours, and recurring jobs per business  
-- Multi-tenant SaaS with per-business knowledge bases  
+- Realtime voice agent powered by **Retell AI** with custom tools  
+- Per-business knowledge base: pricing, service area, hours, recurring jobs  
+- Multi-tenant SaaS — each business gets its own number, agent and data  
 - Call transcripts, summaries, and CRM-ready handoffs
   
 </td>
@@ -61,18 +61,21 @@ A production AI receptionist purpose-built for plumbers, HVAC, electricians and 
 
 ```mermaid
 flowchart TB
-  caller[Customer Calls Business Number] --> twilio[Twilio Voice]
-  twilio --> agent[Realtime Voice Agent - STT / LLM / TTS]
+  caller[Customer Calls Business Number] --> twilio[Twilio Telephony]
+  twilio --> retell[Retell AI - Realtime Voice Agent]
 
-  agent --> kb[(Per-Business Knowledge Base)]
-  agent --> tools[Tools: Book Job, Quote, Transfer, Capture Lead]
+  retell --> kb[(Per-Business Knowledge Base)]
+  retell --> tools[Custom Tools: Book Job, Quote, Transfer, Capture Lead]
 
-  tools --> db[(Neon PostgreSQL)]
-  tools --> calendar[Calendar / Dispatch]
+  tools --> api[Next.js API Routes]
+  api --> db[(Neon PostgreSQL)]
+  api --> calendar[Calendar / Dispatch]
+
+  retell --> webhook[Post-Call Webhook]
+  webhook --> transcripts[Transcripts & AI Summaries]
+  transcripts --> db
 
   db --> dashboard[Next.js Dashboard]
-  agent --> transcripts[Call Transcripts & Summaries]
-  transcripts --> dashboard
 ```
 ---
 
@@ -109,8 +112,9 @@ const revtune = {
 An AI pricing intelligence platform for SaaS founders and indie hackers:
 
 - One-click Stripe Connect; Paddle and LemonSqueezy via API key
-- Normalized data model across all billing platforms
 - AI recommendations: price sensitivity, geo pricing, plan structure
+- **Experiment engine** — A/B pricing tests with statistical significance
+- **Revenue forecasting** — predicted MRR impact, actual vs predicted tracker
 - Weekly AI Brief email — the single most impactful pricing action
 
 </td>
@@ -132,9 +136,17 @@ flowchart TB
   db --> ai[Claude AI Pricing Engine]
   ai --> insights[Recommendations & Weekly Brief]
 
+  db --> experiments[Experiment Engine - A/B Tests]
+  db --> forecast[Revenue Forecasting]
+  experiments --> impact[Actual vs Predicted Tracker]
+  forecast --> impact
+
   insights --> resend[Resend Email]
   metrics --> dashboard[Next.js Dashboard]
   insights --> dashboard
+  experiments --> dashboard
+  forecast --> dashboard
+  impact --> dashboard
 ```
 
 ---
@@ -147,7 +159,7 @@ flowchart TB
 ### Strong Focus Areas
 - **End-to-end TypeScript systems** — Next.js 16, React 19, strict TS
 - **Multi-tenant SaaS architecture** — Clerk orgs, scoped data, billing
-- **AI product engineering** — Claude API, realtime voice agents, RAG
+- **AI product engineering** — Retell AI voice agents, Claude API, RAG
 - **Postgres at scale** — Drizzle ORM, schema design, migrations on Neon
 - **Async pipelines** — Inngest jobs, webhooks, cron, retries
 
@@ -160,10 +172,10 @@ flowchart TB
 | Metric | Value |
 |--------|-------|
 | 🚀 **Production SaaS Shipped** | 2 (Heyfield + RevTune) |
-| 📞 **Voice AI Calls Handled** | 24/7 across home service operators |
+| 📞 **Voice AI Calls Handled** | 24/7 via Retell AI for home service operators |
 | 💳 **Billing Platforms Integrated** | Stripe, Paddle, LemonSqueezy |
+| 📈 **Pricing Experiments Supported** | A/B tests, forecasts, impact tracking |
 | ⚡ **API Response Time** | <200ms (p95) |
-| 🔄 **Background Jobs / Day** | Inngest-driven sync + AI pipelines |
 
 </div>
 
